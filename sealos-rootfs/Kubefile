@@ -1,0 +1,8 @@
+FROM scratch
+COPY . . 
+CMD [
+    "bash ./scrpt/init.sh" \
+    "INSTALL_K3S_EXEC='--disable=traefik --data-dir=/data/rancher/k3s --service-cidr=10.68.0.0/16 --cluster-cidr=10.58.0.0/16 --cluster-dns=10.68.0.2 --cluster-domain=cluster.local --flannel-backend=host-gw --kube-apiserver-arg=service-node-port-range=20000-40000 --kube-apiserver-arg=authorization-mode=Node,RBAC --kube-apiserver-arg=allow-privileged=true --kubelet-arg=topology-manager-policy=single-numa-node --kubelet-arg=cpu-manager-policy=static --kubelet-arg=kube-reserved=cpu=1 --kube-proxy-arg=proxy-mode=ipvs --kube-proxy-arg=masquerade-all=true --kube-proxy-arg=metrics-bind-address=0.0.0.0' INSTALL_K3S_SKIP_DOWNLOAD=true INSTALL_K3S_FORCE_RESTART=true sh ./k3s-install.sh" 
+
+
+]

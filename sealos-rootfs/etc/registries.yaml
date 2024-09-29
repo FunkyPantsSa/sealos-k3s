@@ -1,0 +1,4 @@
+mirrors:
+  '*':
+    endpoint:
+      - http://10.68.0.255:5000/mirrors/*
